@@ -37,6 +37,15 @@ features = ["macros", "rt-multi-thread"]
 [dependencies.git-tracker]
 git = "https://github.com/getchoo/nixpkgs-tracker-bot"
 
+[dependencies.diesel]
+version = "2.2.2"
+features = ["sqlite"]
+optional = true
+
 [lints.clippy]
 all = "warn"
 pedantic = "warn"
+
+[features]
+default = ["database"]
+database = ["diesel"]

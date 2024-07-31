@@ -1,4 +1,5 @@
 {
+  diesel-cli,
   clippy,
   rustfmt,
   cargo-shear,
@@ -11,6 +12,7 @@ in
 mainPkg.overrideAttrs (oa: {
   nativeBuildInputs = [
     # Additional rust tooling
+    diesel-cli
     clippy
     rustfmt
     rust-analyzer

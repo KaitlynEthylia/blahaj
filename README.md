@@ -43,6 +43,7 @@ To run the bot, a couple of environment variables need to be set
 | `$DISCORD_TOKEN` | No | The token for the Discord bot that you just created. |
 | `$NIXPKGS_URL` | Yes | The url to the version of nixpkgs you want to use for the `/nixpkgs` command. |
 | `$GITHUB_TOKEN` | Yes | Github API token. |
+| `$DATABASE_PATH` | Yes (unused) if built without `database` feature flag | Path to sqlite database. |
 
 ## Thanks
 

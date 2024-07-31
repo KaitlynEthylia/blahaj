@@ -3,6 +3,7 @@
   rustPlatform,
   stdenv,
   openssl,
+  sqlite,
   darwin,
   pkg-config,
   rev ? "dirty",
@@ -33,7 +34,7 @@ rustPlatform.buildRustPackage {
   };
 
   buildInputs =
-    [ openssl ]
+    [ openssl sqlite ]
     ++ lib.optionals stdenv.isDarwin (
       with darwin.apple_sdk.frameworks;
       [

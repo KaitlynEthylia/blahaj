@@ -1,5 +1,7 @@
 mod commands;
 mod event_handler;
+#[cfg(feature = "database")]
+mod db;
 
 use dotenv::dotenv;
 use reqwest::Client;
@@ -12,6 +14,8 @@ use poise::serenity_prelude::{ActivityData, ClientBuilder, GatewayIntents};
 // User data, which is stored and accessible in all command invocations
 pub struct Data {
     client: Client,
+    #[cfg(feature = "database")]
+    db: db::Connection,
 }
 
 pub type Context<'a> = poise::Context<'a, Data, Report>;
@@ -63,7 +67,12 @@ async fn main() -> Result<()> {
 
                 poise::builtins::register_globally(ctx, &framework.options().commands).await?;
 
+                #[cfg(feature = "database")]
+                let db = db::Connection::connect()?;
+
                 Ok(Data {
+                    #[cfg(feature = "database")]
+                    db,
                     client: Client::builder().user_agent("blahaj").build()?,
                 })
             })
