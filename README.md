@@ -24,6 +24,9 @@ cd blahaj
 cargo build
 ```
 
+> [!WARNING]
+> Minimum supported rust version: `1.78.0`.
+
 ## Usage
 
 Before starting the bot, create an appliction in the [Discord Developer Portal](https://discord.com/developers/applications).

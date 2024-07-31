@@ -9,6 +9,7 @@ homepage = "https://github.com/isabelroses/blahaj"
 repository = "https://github.com/isabelroses/blahaj"
 keywords = ["discord", "bot", "serenity"]
 edition = "2021"
+rust-version = "1.78.0"
 
 [dependencies]
 bottomify = "1.2.0"
